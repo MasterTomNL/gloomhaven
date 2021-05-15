@@ -2,12 +2,12 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 @font-face {
-  font-family: Pirata;
-  src: url('https://github.com/MasterTomNL/gloomhaven/blob/master/src/app/fonts/pirata.woff');
+  font-family: Majalla;
+  src: url('https://github.com/MasterTomNL/gloomhaven/blob/2b4a0243af500fa9db6c0a1e52163a74a61256e0/src/app/fonts/majalla.woff');
 }
 @font-face {
-  font-family: Majalla;
-  src: url('https://github.com/MasterTomNL/gloomhaven/blob/master/src/app/fonts/majalla.woff');
+  font-family: Pirata;
+  src: url('https://github.com/MasterTomNL/gloomhaven/blob/2b4a0243af500fa9db6c0a1e52163a74a61256e0/src/app/fonts/pirata.woff');
 }
 
 body {
