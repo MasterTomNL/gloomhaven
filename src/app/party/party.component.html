@@ -3,7 +3,7 @@
     <h2>Characters</h2>
   </mat-card-header>
   <mat-card-content *ngFor="let char of characters">
-    <h3>{{ char.title }}</h3>
+    <h3>{{ char.name }}</h3>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="addCharacter()">Add</button>
