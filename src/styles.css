@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: Pirata;
-  src: url('./fonts/pirata.woff');
+  src: url('./app/fonts/pirata.woff');
 }
 @font-face {
   font-family: Majalla;
-  src: url('./fonts/majalla.woff');
+  src: url('./app/fonts/majalla.woff');
 }
 
 body {
