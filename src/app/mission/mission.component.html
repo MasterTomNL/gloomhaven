@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Events</h2>
+  </mat-card-header>
+  <mat-card-content *ngFor="let event of events">
+    <h3>{{ event.title }}</h3>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="addEvent()">Add</button>
+  </mat-card-actions>
+</mat-card>

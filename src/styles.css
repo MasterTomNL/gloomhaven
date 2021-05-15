@@ -1,0 +1,119 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@font-face {
+  font-family: Pirata;
+  src: url('https://mastertom.nl/fonts/pirata.woff');
+}
+@font-face {
+  font-family: Majalla;
+  src: url('https://mastertom.nl/fonts/majalla.woff');
+}
+
+body {
+  background-color: #1f1d1f !important;
+  background-image: url('https://mastertom.nl/img/3px-tile.png') !important;
+  font-family: Calibri;
+}
+h1 {
+  font-size: 3em;
+}
+h1,
+h2,
+h5 {
+  color: #f2d16b;
+  font-family: Pirata;
+}
+
+#adventurers {
+  text-align: center;
+}
+#adventurers div.card {
+  background-color: transparent !important;
+}
+.classIcon {
+  height: 32px;
+}
+.chapterIcon {
+  height: 32px;
+  padding-right: 10px;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 2em;
+}
+
+.road,
+.city,
+.story {
+  color: rgba(240, 240, 240, 0.9);
+}
+.mission,
+.story {
+  font-size: 1.5em;
+}
+p.text {
+  color: rgba(242, 209, 107, 0.75) !important;
+}
+
+.party {
+  float: left;
+  padding-right: 15px;
+}
+.party span {
+  margin-left: -6px;
+}
+.party img {
+  height: 48px;
+}
+
+.card {
+  width: 100%;
+}
+
+.card.city,
+.card.road {
+  width: 400px;
+  padding: 100px 45px 45px;
+  display: block;
+  position: relative;
+  float: left;
+  margin-right: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.card.city .card-body,
+.card.road .card-body {
+  height: 352px;
+  overflow-x: none;
+  overflow-y: auto;
+}
+.card.city {
+  background: url('https://mastertom.nl/img/gloomhaven/city.jpg') no-repeat;
+  border: double 1px #656565;
+}
+.card.road {
+  background: url('https://mastertom.nl/img/gloomhaven/road.jpg') no-repeat;
+  border: double 1px #402f28;
+}
+.card.city .chapterIcon,
+.card.city .party,
+.card.road .chapterIcon,
+.card.road .party {
+  display: none;
+}
+.card.road .card-header {
+  color: #332115;
+  text-align: center;
+}
+.card.city .card-header {
+  color: #b9b9b9;
+  text-align: center;
+}
+.card.city p.text {
+  color: #a5a5a5 !important;
+}
+.card.road p.text {
+  color: #402f28 !important;
+}
