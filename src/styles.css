@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: Pirata;
-  src: url('https://mastertom.nl/fonts/pirata.woff');
+  src: url('./fonts/pirata.woff');
 }
 @font-face {
   font-family: Majalla;
-  src: url('https://mastertom.nl/fonts/majalla.woff');
+  src: url('./fonts/majalla.woff');
 }
 
 body {
