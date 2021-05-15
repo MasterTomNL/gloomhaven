@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: Pirata;
-  src: url('./app/fonts/pirata.woff');
+  src: url('https://github.com/MasterTomNL/gloomhaven/blob/master/src/app/fonts/pirata.woff');
 }
 @font-face {
   font-family: Majalla;
-  src: url('./app/fonts/majalla.woff');
+  src: url('https://github.com/MasterTomNL/gloomhaven/blob/master/src/app/fonts/majalla.woff');
 }
 
 body {
