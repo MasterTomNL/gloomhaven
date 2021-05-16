@@ -12,19 +12,12 @@ h1 {
 h1,
 h2,
 h5 {
+  font-weight: 100;
   color: #f2d16b;
   font-family: 'Pirata One', sans-serif;
 }
 
-#adventurers {
-  text-align: center;
-}
-#adventurers div.card {
-  background-color: transparent !important;
-}
-.classIcon {
-  height: 32px;
-}
+
 .chapterIcon {
   height: 32px;
   padding-right: 10px;

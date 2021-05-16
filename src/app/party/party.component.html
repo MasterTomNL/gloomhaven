@@ -1,11 +1,12 @@
-<mat-card>
-  <mat-card-header>
-    <h2>Characters</h2>
-  </mat-card-header>
-  <mat-card-content *ngFor="let char of characters">
-    <h3>{{ char.name }}</h3>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="addCharacter()">Add</button>
-  </mat-card-actions>
-</mat-card>
+<section id="adventurers">
+  <h1>Meet our adventurers</h1>
+  <article class="col-sm-4" *ngFor="let char of characters">
+    <img [src]="char.img" alt="{{ char.name }}">
+    <h2 class="char-name">{{ char.name }}</h2>
+    <p class="char-details">
+      <img [src]="char.classIcon" class="img-fluid classIcon" alt="{{ char.className }}">
+      {{ char.className }}
+    </p>
+  </article>
+  <button mat-raised-button (click)="addCharacter()">Add</button>
+</section>

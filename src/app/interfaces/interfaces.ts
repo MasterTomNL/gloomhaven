@@ -1,11 +1,10 @@
 export interface Character {
   id: string;
   name: string;
-  class: string;
-  gender: string;
-  race: string;
-  avatar: string;
-  active: boolean;
+  classIcon: string;
+  className: string;
+  img: string;
+  active?: boolean;
 }
 
 export interface Event {

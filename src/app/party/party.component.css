@@ -1,0 +1,9 @@
+#adventurers {
+  text-align: center;
+}
+#adventurers div.card {
+  background-color: transparent !important;
+}
+.classIcon {
+  height: 32px;
+}
