@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -23,6 +24,7 @@ import { PartyComponent } from './party/party.component';
     FormsModule,
     MatCardModule,
     MatDialogModule,
+    MatIconModule,
 
     AngularFireAuthModule,
     AngularFireDatabaseModule,

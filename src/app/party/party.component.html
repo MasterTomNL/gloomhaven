@@ -4,10 +4,12 @@
     <img class="char-img" [src]="char.img" alt="{{ char.name }}">
     <div class="char-details">
       <h2 class="char-name">{{ char.name }}</h2>
-      <img [src]="char.classIcon" class="img-fluid classIcon" alt="{{ char.className }}">
-      {{ char.className }}
+      <img [src]="char.classIcon" class="class-icon" alt="{{ char.className }}">
+      <span class="class-name">{{ char.className }}</span>
     </div>
   </article>
-  <button mat-raised-button (click)="addCharacter()">Add</button>
+  <button mat-fab (click)="addCharacter()">
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
 </section>
 <div style="clear:both;"></div>
