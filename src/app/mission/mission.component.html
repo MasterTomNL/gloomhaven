@@ -3,7 +3,7 @@
   <article *ngFor="let event of events" [class]="event.type">
     <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
     <div class="party">
-      <span *ngFor="let name of event.party">{{ name }}</span>
+      <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
     </div>
   </article>
 </section>

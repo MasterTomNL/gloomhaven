@@ -32,6 +32,9 @@ export class MissionComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  extractJson(obj) {
+    return JSON.parse(obj);
+  }
 }
 
 @Component({
