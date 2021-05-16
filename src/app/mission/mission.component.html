@@ -1,9 +1,8 @@
-<section>
-  <h1>Our story</h1>
-  <article *ngFor="let event of events" [class]="event.type">
-    <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
-    <div class="party">
-      <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
-    </div>
-  </article>
-</section>
+<h1>Our story</h1>
+<div *ngFor="let event of events" [class]="event.type">
+  <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
+  <div class="party">
+    <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
+  </div>
+  <p class="text">{{ event.text }}</p>
+</div>

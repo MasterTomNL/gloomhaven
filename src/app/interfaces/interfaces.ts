@@ -14,7 +14,7 @@ export interface Event {
   type?: string;
   number?: number;
   party?: string;
-  description?: string;
+  text?: string;
   outcome?: string;
   icon?: string;
 }
