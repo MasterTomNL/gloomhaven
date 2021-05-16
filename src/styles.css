@@ -100,3 +100,9 @@ p.text {
 .card.road p.text {
   color: #402f28 !important;
 }
+
+.add-button {
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}

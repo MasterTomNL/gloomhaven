@@ -13,7 +13,8 @@ export interface Event {
   order: number;
   type?: string;
   number?: number;
-  characters?: string;
+  party?: string;
   description?: string;
   outcome?: string;
+  icon?: string;
 }

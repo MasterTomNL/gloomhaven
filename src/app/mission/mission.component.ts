@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from '@angular/material/dialog';
 
 import { Character, Event } from '../interfaces/interfaces';
 import { MissionService } from '../services/mission.service';
@@ -34,4 +38,13 @@ export class MissionComponent implements OnInit {
   selector: 'event-dialog',
   templateUrl: 'event.dialog.html'
 })
-export class DialogEvent {}
+export class DialogEvent {
+  constructor(
+    public dialogRef: MatDialogRef<DialogEvent>,
+    @Inject(MAT_DIALOG_DATA) public data: Character
+  ) {}
+
+  close(bSave?: boolean) {
+    this.dialogRef.close();
+  }
+}

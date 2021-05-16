@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA
+} from '@angular/material/dialog';
 
 import { Character } from '../interfaces/interfaces';
 import { MissionService } from '../services/mission.service';
@@ -25,7 +29,10 @@ export class PartyComponent implements OnInit {
   ngOnInit() {}
 
   addCharacter() {
-    const dialogRef = this.dialog.open(DialogCharacter);
+    const dialogRef = this.dialog.open(DialogCharacter, {
+      width: '50%',
+      data: {}
+    });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
@@ -36,4 +43,13 @@ export class PartyComponent implements OnInit {
   selector: 'character-dialog',
   templateUrl: 'character.dialog.html'
 })
-export class DialogCharacter {}
+export class DialogCharacter {
+  constructor(
+    public dialogRef: MatDialogRef<DialogCharacter>,
+    @Inject(MAT_DIALOG_DATA) public data: Character
+  ) {}
+
+  close(bSave?: boolean) {
+    this.dialogRef.close();
+  }
+}
