@@ -5,6 +5,15 @@
       <mat-label>Name</mat-label>
       <input name="name" matInput placeholder="Name" [(ngModel)]="character.name" />
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Class</mat-label>
+      <mat-select name="class" [(ngModel)]="character.class">
+        <mat-option *ngFor="let class of classes" [value]="class">
+          {{ class }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions>

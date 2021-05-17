@@ -68,6 +68,8 @@ export class PartyComponent implements OnInit {
 })
 export class DialogCharacter {
   character: Character;
+  classes = ['Mindthief', 'Cragheart', 'Tinkerer'];
+
   constructor(
     public dialogRef: MatDialogRef<DialogCharacter>,
     @Inject(MAT_DIALOG_DATA) public data: any
