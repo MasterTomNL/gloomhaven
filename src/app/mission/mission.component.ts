@@ -34,6 +34,7 @@ export class MissionComponent implements OnInit {
       console.log(result);
       if (typeof result === 'object') {
         result.party = JSON.stringify(result.party);
+        if (result.order == undefined) result.order = this.events.length;
         this.missionService.addEvent(result);
       }
     });
