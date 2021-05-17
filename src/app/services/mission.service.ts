@@ -33,4 +33,17 @@ export class MissionService {
   addEvent(event: Event) {
     this.db.collection<Event>('events').add(event);
   }
+
+  getCharactersFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('characters'));
+  }
+  getCharacterNames() {
+    let array: string[] = [];
+    let temp = this.getCharactersFromLocalStorage();
+    temp.forEach(c => array.push(c.name));
+    return array;
+  }
+  updateCharactersInLocalStorage(characters: Character[]) {
+    localStorage.setItem('characters', JSON.stringify(characters));
+  }
 }

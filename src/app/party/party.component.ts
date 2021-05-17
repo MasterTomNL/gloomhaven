@@ -21,9 +21,10 @@ export class PartyComponent implements OnInit {
     public dialog: MatDialog
   ) {
     // get characters
-    missionService
-      .getCharacters()
-      .subscribe(result => (this.characters = result));
+    missionService.getCharacters().subscribe(result => {
+      this.characters = result;
+      missionService.updateCharactersInLocalStorage(result);
+    });
   }
 
   ngOnInit() {}

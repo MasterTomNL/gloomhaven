@@ -1,14 +1,32 @@
 <h2 mat-dialog-title>Add an event</h2>
 <div mat-dialog-content>
-  <form>
+  <form class="add-form">
     <mat-form-field>
       <mat-label>Title</mat-label>
-      <input matInput placeholder="Title" [ngModel]="data.title">
+      <input name="title" matInput placeholder="Title" [(ngModel)]="event.title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <mat-select name="type" [(ngModel)]="event.type">
+        <mat-option *ngFor="let type of types" [value]="type">
+          {{ type }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Party</mat-label>
+      <mat-selection-list #characters>
+        <mat-list-option *ngFor="let character of characters">
+          {{ character.name }}
+        </mat-list-option>
+      </mat-selection-list>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Text</mat-label>
-      <textarea matInput placeholder="What happened..."></textarea>
+      <textarea name="text" matInput [(ngModel)]="event.text" placeholder="What happened..."></textarea>
     </mat-form-field>
   </form>
 </div>

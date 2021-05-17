@@ -14,6 +14,7 @@ import { MissionService } from '../services/mission.service';
   styleUrls: ['./mission.component.css']
 })
 export class MissionComponent implements OnInit {
+  characters: Character[];
   events: Event[];
   constructor(
     private missionService: MissionService,
@@ -21,6 +22,7 @@ export class MissionComponent implements OnInit {
   ) {
     // get events
     missionService.getEvents().subscribe(result => (this.events = result));
+    this.characters = missionService.getCharactersFromLocalStorage();
   }
 
   ngOnInit() {}
@@ -52,10 +54,17 @@ export class MissionComponent implements OnInit {
   templateUrl: 'event.dialog.html'
 })
 export class DialogEvent {
+  event: Event;
+  characters = ['Furgison', 'Bora', 'Trinquil'];
+  types = ['story', 'road', 'city'];
   constructor(
     public dialogRef: MatDialogRef<DialogEvent>,
-    @Inject(MAT_DIALOG_DATA) public data: Event
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: Event,
+    missionService: MissionService
+  ) {
+    this.event = <Event>{};
+    //this.characters = ['Furgison', 'Bora', 'Trinquil']; //missionService.getCharacterNames();
+  }
 
   close(bSave?: boolean) {
     this.dialogRef.close();
