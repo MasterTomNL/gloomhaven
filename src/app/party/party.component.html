@@ -6,10 +6,10 @@
     </button>
   </h1>
   <article class="char" *ngFor="let char of characters">
-    <img class="char-img" [src]="'https://mastertom.nl/img/gloomhaven/'+(char.name|lowercase)+'-icon.png'" alt="{{ char.name }}">
+    <img [src]="'https://mastertom.nl/img/gloomhaven/class-avatars/'+(char.class|lowercase)+'.png'" class="char-img" alt="{{ char.name }}">
     <div class="char-details">
       <h2 class="char-name">{{ char.name }}</h2>
-      <img [src]="'https://mastertom.nl/img/gloomhaven/icon-'+(char.class|lowercase)+'-white.png'" class="class-icon" alt="{{ char.class }}">
+      <img [src]="'https://mastertom.nl/img/gloomhaven/class-icons/'+(char.class|lowercase)+'.png'" class="class-icon" alt="{{ char.class }}">
       <span class="class-name">{{ char.class }}</span>
     </div>
   </article>

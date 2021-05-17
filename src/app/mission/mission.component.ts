@@ -37,7 +37,6 @@ export class MissionComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogEvent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if (typeof result === 'object') {
         if (result.order == undefined) result.order = this.events.length;
         this.missionService.addEvent(result);

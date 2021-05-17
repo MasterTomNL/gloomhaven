@@ -38,7 +38,7 @@ export class PartyComponent implements OnInit {
   addCharacter() {
     const dialogRef = this.dialog.open(DialogCharacter);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if (typeof result === 'object') this.missionService.addCharacter(result);
     });
   }
 
@@ -65,7 +65,25 @@ export class PartyComponent implements OnInit {
 })
 export class DialogCharacter {
   character: Character;
-  classes: string[] = ['Mindthief', 'Cragheart', 'Tinkerer'];
+  classes: string[] = [
+    'Beast tyrant',
+    'Berserker',
+    'Brute',
+    'Cragheart',
+    'Doomstalker',
+    'Elementalist',
+    'Mindthief',
+    'Nightshroud',
+    'Plagueherald',
+    'Quartermaster',
+    'Sawbones',
+    'Scoundrel',
+    'Soothsinger',
+    'Spellweaver',
+    'Summoner',
+    'Sunkeeper',
+    'Tinkerer'
+  ];
 
   constructor(
     public dialogRef: MatDialogRef<DialogCharacter>,
