@@ -25,6 +25,7 @@ import { MissionComponent } from './mission/mission.component';
 import { MissionService } from './services/mission.service';
 import { DialogEvent } from './mission/mission.component';
 import { PartyComponent } from './party/party.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   imports: [
@@ -48,7 +49,7 @@ import { PartyComponent } from './party/party.component';
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   declarations: [AppComponent, MissionComponent, PartyComponent, DialogEvent],
-  providers: [MissionService],
+  providers: [MissionService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

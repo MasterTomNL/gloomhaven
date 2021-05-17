@@ -18,3 +18,9 @@ export interface Event {
   icon?: string;
   visible?: boolean;
 }
+
+export interface User {
+  id: string;
+  name: string;
+  isAdmin?: boolean;
+}
