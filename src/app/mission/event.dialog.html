@@ -44,6 +44,16 @@
       <mat-label>Text</mat-label>
       <textarea name="text" matInput rows="10" [(ngModel)]="event.text" placeholder="What happened..."></textarea>
     </mat-form-field>
+
+    <mat-form-field *ngIf="event.type in ['city','road']">
+      <mat-label>Choice</mat-label>
+      <input name="choice" matInput placeholder="choice" [(ngModel)]="event.choice" />
+    </mat-form-field>
+
+    <mat-form-field *ngIf="event.type in ['city','road']">
+      <mat-label>Outcome</mat-label>
+      <input name="outcome" matInput placeholder="Outcome" [(ngModel)]="event.outcome" />
+    </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions>
