@@ -18,6 +18,7 @@ export class MissionComponent implements OnInit {
   characters: Character[];
   events: Event[];
   user: User;
+  eventsAreHidden: boolean = false;
   constructor(
     private missionService: MissionService,
     public dialog: MatDialog,
@@ -72,6 +73,15 @@ export class MissionComponent implements OnInit {
       this.characters.find(c => c.name == name).class.toLowerCase() +
       '.png'
     );
+  }
+  toggleHidden() {
+    this.eventsAreHidden != this.eventsAreHidden;
+    console.log(this.eventsAreHidden);
+  }
+  hidden(event: Event) {
+    if ((event.type == 'road' || event.type == 'city') && this.eventsAreHidden)
+      return true;
+    return false;
   }
 }
 
