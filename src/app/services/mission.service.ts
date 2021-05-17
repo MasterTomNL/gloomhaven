@@ -17,7 +17,11 @@ export class MissionService {
   }
 
   getCharacters() {
-    return from(this.db.collection<Character>('characters').valueChanges());
+    return from(
+      this.db
+        .collection<Character>('characters')
+        .valueChanges({ idField: 'id' })
+    );
   }
   getEvents() {
     return from(
@@ -33,13 +37,18 @@ export class MissionService {
   addEvent(event: Event) {
     this.db.collection<Event>('events').add(event);
   }
+  saveCharacter(character: Character) {
+    this.db
+      .collection<Character>('characters')
+      .doc(character.id)
+      .set(character);
+  }
   saveEvent(event: Event) {
     this.db
       .collection<Event>('events')
       .doc(event.id)
       .set(event);
   }
-
   getCharactersFromLocalStorage() {
     return JSON.parse(localStorage.getItem('characters'));
   }

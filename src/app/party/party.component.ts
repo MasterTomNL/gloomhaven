@@ -48,6 +48,18 @@ export class PartyComponent implements OnInit {
   isAdmin() {
     return this.user ? this.user.isAdmin : false;
   }
+
+  edit(character: Character) {
+    const dialogRef = this.dialog.open(DialogCharacter, {
+      data: { character: character }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (typeof result === 'object') {
+        this.missionService.saveCharacter(result);
+      }
+    });
+  }
 }
 
 @Component({
@@ -55,12 +67,19 @@ export class PartyComponent implements OnInit {
   templateUrl: 'character.dialog.html'
 })
 export class DialogCharacter {
+  character: Character;
   constructor(
     public dialogRef: MatDialogRef<DialogCharacter>,
-    @Inject(MAT_DIALOG_DATA) public data: Character
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.character = <Character>{};
+    if (data) {
+      this.character = data.character;
+    }
+  }
 
   close(bSave?: boolean) {
-    this.dialogRef.close();
+    if (bSave) this.dialogRef.close(this.character);
+    else this.dialogRef.close();
   }
 }
