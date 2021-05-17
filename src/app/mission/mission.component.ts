@@ -39,14 +39,10 @@ export class MissionComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (typeof result === 'object') {
-        result.party = JSON.stringify(result.party);
         if (result.order == undefined) result.order = this.events.length;
         this.missionService.addEvent(result);
       }
     });
-  }
-  extractJson(obj) {
-    return JSON.parse(obj);
   }
   isVisible() {
     return true;
@@ -60,6 +56,18 @@ export class MissionComponent implements OnInit {
   }
   isAdmin() {
     return this.user ? this.user.isAdmin : false;
+  }
+
+  edit(event: Event) {
+    const dialogRef = this.dialog.open(DialogEvent, { data: { event: event } });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (typeof result === 'object') {
+        if (result.order == undefined) result.order = this.events.length;
+        this.missionService.addEvent(result);
+      }
+    });
   }
 }
 

@@ -11,10 +11,13 @@
       </mat-icon>
       <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
       {{ event.title }}
+      <button mat-icon-button (click)="edit(event)" *ngIf="isAdmin()">
+        <mat-icon>edit</mat-icon>
+      </button>
     </h2>
     <div class="text" [hidden]="true" id="event-{{ $index }}">
       <div class="party">
-        <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
+        <span *ngFor="let name of event.party">{{ name }}</span>
       </div>
       <p>{{ event.text }}</p>
     </div>
