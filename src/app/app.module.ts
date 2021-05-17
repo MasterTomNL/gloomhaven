@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -39,6 +40,7 @@ import { PartyComponent } from './party/party.component';
     MatIconModule,
     MatInputModule,
     MatListModule,
+    MatRadioModule,
     MatSelectModule,
 
     AngularFireAuthModule,

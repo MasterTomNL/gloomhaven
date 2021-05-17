@@ -5,8 +5,8 @@
   </button>
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
     <h2>
-      <img class="eventIcon" [src]="event.icon">
-      <mat-icon>{{ typeIcon(event.type) }}</mat-icon>
+      <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'">
+      <!--<mat-icon>{{ typeIcon(event.type) }}</mat-icon>-->
       {{ event.title }}
     </h2>
     <div class="text" [hidden]="true" id="event-{{ $index }}">

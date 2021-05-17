@@ -11,6 +11,7 @@ export interface Event {
   id: string;
   title: string;
   order: number;
+  eventId?: number;
   type?: string;
   number?: number;
   party?: string;

@@ -31,7 +31,11 @@ export class MissionComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogEvent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result);
+      if (typeof result === 'object') {
+        result.party = JSON.stringify(result.party);
+        this.missionService.addEvent(result);
+      }
     });
   }
   extractJson(obj) {
@@ -56,8 +60,40 @@ export class MissionComponent implements OnInit {
 export class DialogEvent {
   event: Event;
   characters: string[];
-  selectedCharacters: string[];
   types = ['story', 'road', 'city'];
+  icons = [
+    'anker',
+    'bag',
+    'beer',
+    'berries',
+    'boot',
+    'bow',
+    'bowl',
+    'build',
+    'campfire',
+    'candle',
+    'chest',
+    'coin',
+    'crown',
+    'document',
+    'fight',
+    'fish',
+    'glove',
+    'hide',
+    'hourglass',
+    'letter',
+    'navigation',
+    'rune',
+    'shield',
+    'ship',
+    'skull',
+    'staff',
+    'sword',
+    'tent',
+    'time',
+    'tower',
+    'wood'
+  ];
   constructor(
     public dialogRef: MatDialogRef<DialogEvent>,
     @Inject(MAT_DIALOG_DATA) public data: Event,
@@ -68,7 +104,7 @@ export class DialogEvent {
   }
 
   close(bSave?: boolean) {
-    console.log(this.selectedCharacters);
-    this.dialogRef.close();
+    if (bSave) this.dialogRef.close(this.event);
+    else this.dialogRef.close();
   }
 }

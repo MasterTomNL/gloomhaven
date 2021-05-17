@@ -16,12 +16,28 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Party</mat-label>
-      <mat-selection-list #partyList name="party" [(ngModel)]="selectedCharacters">
-        <mat-list-option *ngFor="let character of characters" [value]="character">
+      <mat-label>Event ID</mat-label>
+      <input name="id" matInput placeholder="id" [(ngModel)]="event.eventId" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Party members</mat-label>
+      <input matInput disabled [value]="event.party">
+      <mat-selection-list #partyList name="party" [(ngModel)]="event.party">
+        <mat-list-option matInput *ngFor="let character of characters" [value]="character">
           {{ character }}
         </mat-list-option>
       </mat-selection-list>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Icon</mat-label>
+      <input matInput [value]="event.icon" disabled>
+      <img [src]="'https://mastertom.nl/img/gloomhaven/icon-' + event.icon + '.png'" style="width:32px;" *ngIf="event.icon">
+      <br />
+      <mat-radio-group name="icon" [(ngModel)]="event.icon" style="clear:both;">
+        <mat-radio-button *ngFor="let icon of icons" [value]="icon">{{ icon}}</mat-radio-button>
+      </mat-radio-group>
     </mat-form-field>
 
     <mat-form-field>
