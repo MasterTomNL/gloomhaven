@@ -1,5 +1,8 @@
 .eventIcon {
+  position: relative;
+  top: 8px;
   width: 32px;
+  padding-right: 4px;
 }
 
 .story {
@@ -25,7 +28,6 @@
   height: 16px;
   width: 16px;
 }
-
 .city .text {
   color: #a5a5a5 !important;
 }
@@ -35,4 +37,8 @@
 .city .party,
 .road .party {
   display: none;
+}
+.typeIcon {
+  position: relative;
+  top: 4px;
 }

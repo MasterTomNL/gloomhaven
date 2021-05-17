@@ -7,10 +7,14 @@
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
     <h2>
       <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'" *ngIf="event.type == 'story'">
-      <mat-icon *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{ typeIcon(event.type) }}
+      <mat-icon class="typeIcon" *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{
+        typeIcon(event.type) }}
       </mat-icon>
       <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
       {{ event.title }}
+      <span class="party">
+        <span *ngFor="let char of event.party">{{ char }}</span>
+      </span>
       <button mat-icon-button (click)="edit(event)" *ngIf="isAdmin()">
         <mat-icon>edit</mat-icon>
       </button>
