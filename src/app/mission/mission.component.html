@@ -4,9 +4,7 @@
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </h1>
-  <mat-chip-list>
-    <mat-chip (click)="toggleHidden()">Show/Hide road/city events.</mat-chip>
-  </mat-chip-list>
+  <mat-checkbox style="color:white;" [(ngModel)]="eventsAreHidden">Hide road/city events.</mat-checkbox>
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type"
     [hidden]="hidden(event)">
     <h2>

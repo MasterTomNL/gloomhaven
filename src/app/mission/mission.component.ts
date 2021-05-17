@@ -18,7 +18,7 @@ export class MissionComponent implements OnInit {
   characters: Character[];
   events: Event[];
   user: User;
-  eventsAreHidden: boolean = false;
+  eventsAreHidden: boolean = true;
   constructor(
     private missionService: MissionService,
     public dialog: MatDialog,
