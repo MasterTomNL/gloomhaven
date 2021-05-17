@@ -114,10 +114,11 @@ export class DialogEvent {
   ];
   constructor(
     public dialogRef: MatDialogRef<DialogEvent>,
-    @Inject(MAT_DIALOG_DATA) public data: Event,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     missionService: MissionService
   ) {
     this.event = <Event>{};
+    if (data) this.event = data.event;
     this.characters = missionService.getCharacterNames();
   }
 
