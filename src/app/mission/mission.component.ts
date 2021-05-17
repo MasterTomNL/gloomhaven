@@ -54,7 +54,7 @@ export class MissionComponent implements OnInit {
 export class DialogEvent {
   constructor(
     public dialogRef: MatDialogRef<DialogEvent>,
-    @Inject(MAT_DIALOG_DATA) public data: Character
+    @Inject(MAT_DIALOG_DATA) public data: Event
   ) {}
 
   close(bSave?: boolean) {

@@ -1,6 +1,16 @@
 <h2 mat-dialog-title>Add an event</h2>
 <div mat-dialog-content>
-  Hey
+  <form>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" [ngModel]="data.title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Text</mat-label>
+      <textarea matInput placeholder="What happened..."></textarea>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="close()">Cancel</button>
