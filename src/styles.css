@@ -5,6 +5,8 @@ body {
   background-color: #1f1d1f !important;
   background-image: url('https://mastertom.nl/img/3px-tile.png') !important;
   font-family: Calibri;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 h1 {
   font-size: 3em;
