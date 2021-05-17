@@ -1,8 +1,9 @@
 <section>
-  <h1>Our story</h1>
-  <button mat-icon-button class="add-button" (click)="addEvent()">
-    <mat-icon>add_circle_outline</mat-icon>
-  </button>
+  <h1>Our story
+    <button mat-icon-button class="add-button" (click)="addEvent()">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </h1>
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
     <h2>
       <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'">

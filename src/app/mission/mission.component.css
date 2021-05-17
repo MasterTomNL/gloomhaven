@@ -10,39 +10,6 @@
 .story .text {
   color: rgba(242, 209, 107, 0.75);
 }
-
-/*
-.city,
-.road {
-  width: 300px;
-  padding: 100px 50px 50px;
-  display: block;
-  position: relative;
-  float: left;
-  margin-right: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 352px;
-  overflow-x: none;
-  overflow-y: auto;
-}
-.city {
-  background: url('https://mastertom.nl/img/gloomhaven/city.jpg') no-repeat;
-  border: double 1px #656565;
-}
-.road {
-  background: url('https://mastertom.nl/img/gloomhaven/road.jpg') no-repeat;
-  border: double 1px #402f28;
-}
-
-.road h2 {
-  color: #332115;
-  text-align: center;
-}
-.city h2 {
-  color: #b9b9b9;
-  text-align: center;
-}*/
 .city .text {
   color: #a5a5a5 !important;
 }
