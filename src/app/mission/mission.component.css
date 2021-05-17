@@ -10,6 +10,22 @@
 .story .text {
   color: rgba(242, 209, 107, 0.75);
 }
+.road,
+.city {
+  float: left;
+  width: 50%;
+}
+.road h2,
+.city h2 {
+  color: rgb(170, 128, 99);
+  font-size: 1.2em;
+}
+.road .eventIcon,
+.city .eventIcon {
+  height: 16px;
+  width: 16px;
+}
+
 .city .text {
   color: #a5a5a5 !important;
 }

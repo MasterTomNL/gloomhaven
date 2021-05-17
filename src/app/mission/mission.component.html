@@ -6,8 +6,9 @@
   </h1>
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
     <h2>
-      <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'">
-      <!--<mat-icon>{{ typeIcon(event.type) }}</mat-icon>-->
+      <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'" *ngIf="event.type == 'story'">
+      <mat-icon *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{ typeIcon(event.type) }}
+      </mat-icon>
       <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
       {{ event.title }}
     </h2>
