@@ -1,9 +1,7 @@
 export interface Character {
   id: string;
   name: string;
-  classIcon: string;
-  className: string;
-  img: string;
+  class: string;
   active?: boolean;
 }
 
