@@ -36,6 +36,9 @@ export class AppComponent {
       }
     });
   }
+  isLoggedIn() {
+    return this.user ? true : false;
+  }
 }
 
 @Component({
