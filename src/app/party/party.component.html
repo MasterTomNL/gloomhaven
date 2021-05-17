@@ -10,7 +10,7 @@
     <div class="char-details">
       <h2 class="char-name">
         {{ char.name }}
-        <button mat-icon-button class="edit-icon" (click)="edit(char)">
+        <button mat-icon-button class="edit-icon" (click)="edit(char)" *ngIf="isAdmin()">
           <mat-icon>edit</mat-icon>
         </button>
       </h2>
