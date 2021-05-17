@@ -1,7 +1,7 @@
 <section id="adventurers">
   <h1>
     Meet our adventurers
-    <button mat-icon-button class="add-button" (click)="addCharacter()" *ngIf="user?.isAdmin">
+    <button mat-icon-button class="add-button" (click)="addCharacter()" *ngIf="isAdmin()">
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </h1>

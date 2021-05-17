@@ -58,6 +58,9 @@ export class MissionComponent implements OnInit {
       city: 'location_city'
     }[type];
   }
+  isAdmin() {
+    return this.user ? this.user.isAdmin : false;
+  }
 }
 
 @Component({

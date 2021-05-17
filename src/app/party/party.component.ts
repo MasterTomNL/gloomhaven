@@ -44,6 +44,10 @@ export class PartyComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  isAdmin() {
+    return this.user ? this.user.isAdmin : false;
+  }
 }
 
 @Component({
