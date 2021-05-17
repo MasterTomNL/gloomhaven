@@ -38,6 +38,13 @@ export class MissionComponent implements OnInit {
   isVisible() {
     return true;
   }
+  typeIcon(type: string) {
+    return {
+      story: 'auto_stories',
+      road: 'explore',
+      city: 'location_city'
+    }[type];
+  }
 }
 
 @Component({

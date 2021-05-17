@@ -4,7 +4,11 @@
     <mat-icon>add_circle_outline</mat-icon>
   </button>
   <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
-    <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
+    <h2>
+      <img class="eventIcon" [src]="event.icon">
+      <mat-icon>{{ typeIcon(event.type) }}</mat-icon>
+      {{ event.title }}
+    </h2>
     <div class="text" [hidden]="true" id="event-{{ $index }}">
       <div class="party">
         <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
