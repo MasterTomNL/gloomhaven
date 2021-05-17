@@ -42,3 +42,13 @@
   position: relative;
   top: 4px;
 }
+
+.party img {
+  position: relative;
+  top: 4px;
+  height: 24px;
+  margin-right: -8px;
+}
+.party {
+  padding-right: 10px;
+}

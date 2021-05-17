@@ -66,6 +66,13 @@ export class MissionComponent implements OnInit {
       }
     });
   }
+  getClassIcon(name: string) {
+    return (
+      'https://mastertom.nl/img/gloomhaven/class-avatars/' +
+      this.characters.find(c => c.name == name).class.toLowerCase() +
+      '.png'
+    );
+  }
 }
 
 @Component({

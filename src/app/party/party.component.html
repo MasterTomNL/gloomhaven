@@ -8,7 +8,12 @@
   <article class="char" *ngFor="let char of characters">
     <img [src]="'https://mastertom.nl/img/gloomhaven/class-avatars/'+(char.class|lowercase)+'.png'" class="char-img" alt="{{ char.name }}">
     <div class="char-details">
-      <h2 class="char-name">{{ char.name }}</h2>
+      <h2 class="char-name">
+        {{ char.name }}
+        <button mat-icon-button class="edit-icon" (click)="edit(char)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </h2>
       <img [src]="'https://mastertom.nl/img/gloomhaven/class-icons/'+(char.class|lowercase)+'.png'" class="class-icon" alt="{{ char.class }}">
       <span class="class-name">{{ char.class }}</span>
     </div>

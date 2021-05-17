@@ -12,11 +12,10 @@ export interface Event {
   eventId?: number;
   type?: string;
   number?: number;
-  party?: string;
+  party?: string[];
   text?: string;
-  outcome?: string;
+  rewards?: string;
   icon?: string;
-  visible?: boolean;
 }
 
 export interface User {
