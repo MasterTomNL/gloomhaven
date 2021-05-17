@@ -35,6 +35,9 @@ export class MissionComponent implements OnInit {
   extractJson(obj) {
     return JSON.parse(obj);
   }
+  isVisible() {
+    return true;
+  }
 }
 
 @Component({

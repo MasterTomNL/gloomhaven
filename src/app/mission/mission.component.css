@@ -9,6 +9,7 @@
   color: rgba(242, 209, 107, 0.75);
 }
 
+/*
 .city,
 .road {
   width: 300px;
@@ -39,15 +40,14 @@
 .city h2 {
   color: #b9b9b9;
   text-align: center;
-}
-
-.city .party,
-.road .party {
-  display: none;
-}
+}*/
 .city .text {
   color: #a5a5a5 !important;
 }
 .road .text {
   color: #402f28 !important;
+}
+.city .party,
+.road .party {
+  display: none;
 }

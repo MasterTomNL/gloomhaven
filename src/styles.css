@@ -27,10 +27,6 @@ h5 {
   line-height: 2em;
 }
 
-.party {
-  float: left;
-  padding-right: 15px;
-}
 .party span {
   margin-left: -6px;
 }
@@ -38,8 +34,7 @@ h5 {
   height: 48px;
 }
 
-.add-button {
-  font-size: 2em;
+.add-button .material-icons {
   color: white;
-  cursor: pointer;
+  font-size: 36px;
 }

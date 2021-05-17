@@ -17,4 +17,5 @@ export interface Event {
   text?: string;
   outcome?: string;
   icon?: string;
+  visible?: boolean;
 }

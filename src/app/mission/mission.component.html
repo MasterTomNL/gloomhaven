@@ -1,8 +1,15 @@
-<h1>Our story</h1>
-<div *ngFor="let event of events" [class]="event.type">
-  <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
-  <div class="party">
-    <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
-  </div>
-  <p class="text">{{ event.text }}</p>
-</div>
+<section>
+  <h1>Our story</h1>
+  <button mat-icon-button class="add-button" (click)="addEvent()">
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+  <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type">
+    <h2><img class="eventIcon" [src]="event.icon"> {{ event.title }}</h2>
+    <div class="text" [hidden]="true" id="event-{{ $index }}">
+      <div class="party">
+        <span *ngFor="let name of extractJson(event.party)">{{ name }}</span>
+      </div>
+      <p>{{ event.text }}</p>
+    </div>
+  </article>
+</section>
