@@ -23,7 +23,7 @@ export class MissionService {
     return from(
       this.db
         .collection<Event>('events', ref => ref.orderBy('order'))
-        .valueChanges()
+        .valueChanges({ idField: 'id' })
     );
   }
 
@@ -32,6 +32,12 @@ export class MissionService {
   }
   addEvent(event: Event) {
     this.db.collection<Event>('events').add(event);
+  }
+  saveEvent(event: Event) {
+    this.db
+      .collection<Event>('events')
+      .doc(event.id)
+      .set(event);
   }
 
   getCharactersFromLocalStorage() {
