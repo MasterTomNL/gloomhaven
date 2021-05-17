@@ -36,12 +36,9 @@ export class PartyComponent implements OnInit {
   ngOnInit() {}
 
   addCharacter() {
-    const dialogRef = this.dialog.open(DialogCharacter, {
-      width: '50%',
-      data: {}
-    });
+    const dialogRef = this.dialog.open(DialogCharacter);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result);
     });
   }
 
@@ -68,16 +65,14 @@ export class PartyComponent implements OnInit {
 })
 export class DialogCharacter {
   character: Character;
-  classes = ['Mindthief', 'Cragheart', 'Tinkerer'];
+  classes: string[] = ['Mindthief', 'Cragheart', 'Tinkerer'];
 
   constructor(
     public dialogRef: MatDialogRef<DialogCharacter>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.character = <Character>{};
-    if (data) {
-      this.character = data.character;
-    }
+    if (data) this.character = data.character;
   }
 
   close(bSave?: boolean) {

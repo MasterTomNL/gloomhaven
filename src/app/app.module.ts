@@ -20,12 +20,15 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from './config/firebase.config';
 
-import { AppComponent } from './app.component';
 import { DialogAuthentication } from './app.component';
-import { MissionComponent } from './mission/mission.component';
-import { MissionService } from './services/mission.service';
+import { DialogCharacter } from './party/party.component';
 import { DialogEvent } from './mission/mission.component';
+
+import { AppComponent } from './app.component';
+import { MissionComponent } from './mission/mission.component';
 import { PartyComponent } from './party/party.component';
+
+import { MissionService } from './services/mission.service';
 import { UserService } from './services/user.service';
 
 @NgModule({
@@ -53,8 +56,9 @@ import { UserService } from './services/user.service';
     AppComponent,
     MissionComponent,
     PartyComponent,
-    DialogEvent,
-    DialogAuthentication
+    DialogAuthentication,
+    DialogCharacter,
+    DialogEvent
   ],
   providers: [MissionService, UserService],
   bootstrap: [AppComponent]
