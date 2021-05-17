@@ -5,8 +5,9 @@ import {
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
 
-import { Character } from '../interfaces/interfaces';
+import { Character, User } from '../interfaces/interfaces';
 import { MissionService } from '../services/mission.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-party',
@@ -15,16 +16,21 @@ import { MissionService } from '../services/mission.service';
 })
 export class PartyComponent implements OnInit {
   characters: Character[];
+  user: User;
 
   constructor(
     private missionService: MissionService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    userService: UserService
   ) {
     // get characters
     missionService.getCharacters().subscribe(result => {
       this.characters = result;
       missionService.updateCharactersInLocalStorage(result);
     });
+    // get user
+    let userId = userService.getCurrentUserId();
+    if (userId) userService.getUser(userId).subscribe(u => (this.user = u));
   }
 
   ngOnInit() {}

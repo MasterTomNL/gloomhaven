@@ -1,6 +1,6 @@
 <section>
   <h1>Our story
-    <button mat-icon-button class="add-button" (click)="addEvent()">
+    <button mat-icon-button class="add-button" (click)="addEvent()" *ngIf="user?.isAdmin">
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </h1>

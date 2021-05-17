@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from './config/firebase.config';
 
 import { AppComponent } from './app.component';
+import { DialogAuthentication } from './app.component';
 import { MissionComponent } from './mission/mission.component';
 import { MissionService } from './services/mission.service';
 import { DialogEvent } from './mission/mission.component';
@@ -48,7 +49,13 @@ import { UserService } from './services/user.service';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  declarations: [AppComponent, MissionComponent, PartyComponent, DialogEvent],
+  declarations: [
+    AppComponent,
+    MissionComponent,
+    PartyComponent,
+    DialogEvent,
+    DialogAuthentication
+  ],
   providers: [MissionService, UserService],
   bootstrap: [AppComponent]
 })

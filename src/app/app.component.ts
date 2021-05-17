@@ -13,12 +13,17 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  user: User;
   constructor(private userService: UserService, public dialog: MatDialog) {
     let userId = userService.getCurrentUserId();
     if (userId) {
       userService.getUser(userId).subscribe(u => {
-        if (u.isAdmin) localStorage.setItem('isAdmin', 'true');
-        else localStorage.setItem('isAdmin', 'false');
+        this.user = u;
+        if (u.isAdmin) {
+          localStorage.setItem('isAdmin', 'true');
+        } else {
+          localStorage.setItem('isAdmin', 'false');
+        }
       });
     }
   }
@@ -39,12 +44,8 @@ export class AppComponent {
 })
 export class DialogAuthentication {
   user: User;
-  constructor(
-    public dialogRef: MatDialogRef<DialogAuthentication>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
-    userService: UserService
-  ) {
-    // do stuff
+  constructor(private dialogRef: MatDialogRef<DialogAuthentication>) {
+    this.user = <User>{};
   }
 
   close(bSave?: boolean) {
