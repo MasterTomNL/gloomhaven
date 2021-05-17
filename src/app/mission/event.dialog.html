@@ -17,9 +17,9 @@
 
     <mat-form-field>
       <mat-label>Party</mat-label>
-      <mat-selection-list #characters>
-        <mat-list-option *ngFor="let character of characters">
-          {{ character.name }}
+      <mat-selection-list #partyList name="party" [(ngModel)]="selectedCharacters">
+        <mat-list-option *ngFor="let character of characters" [value]="character">
+          {{ character }}
         </mat-list-option>
       </mat-selection-list>
     </mat-form-field>

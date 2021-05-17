@@ -55,7 +55,8 @@ export class MissionComponent implements OnInit {
 })
 export class DialogEvent {
   event: Event;
-  characters = ['Furgison', 'Bora', 'Trinquil'];
+  characters: string[];
+  selectedCharacters: string[];
   types = ['story', 'road', 'city'];
   constructor(
     public dialogRef: MatDialogRef<DialogEvent>,
@@ -63,10 +64,11 @@ export class DialogEvent {
     missionService: MissionService
   ) {
     this.event = <Event>{};
-    //this.characters = ['Furgison', 'Bora', 'Trinquil']; //missionService.getCharacterNames();
+    this.characters = missionService.getCharacterNames();
   }
 
   close(bSave?: boolean) {
+    console.log(this.selectedCharacters);
     this.dialogRef.close();
   }
 }
