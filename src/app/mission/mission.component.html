@@ -1,9 +1,10 @@
 <div class="worldmap">
   <img src="https://mastertom.nl/img/gloomhaven/map/map.png" class="map">
-  <img src="https://mastertom.nl/img/gloomhaven/map/1.png" class="location"
-    [style.left]="getLeft()" [style.top]="getTop()" [style.width]="getWidth()">
+  <img class="location"
+    *ngFor="let location of locations"
+    [src]="'https://mastertom.nl/img/gloomhaven/map/'+location.number+'.png'"
+    [style.left]="getLeft(location.mapPosition.left)" [style.top]="getTop(location.mapPosition.top)" [style.width]="getWidth(location.width)">
 </div>
-<area />
 
 <section>
   <h1>Our story

@@ -8,6 +8,7 @@ import {
 import { Character, Event, User } from '../interfaces/interfaces';
 import { MissionService } from '../services/mission.service';
 import { UserService } from '../services/user.service';
+import { locations } from './locations';
 
 @Component({
   selector: 'app-mission',
@@ -20,6 +21,7 @@ export class MissionComponent implements OnInit {
   user: User;
   eventsAreHidden: boolean = true;
   width: number;
+  locations = locations;
 
   constructor(
     private missionService: MissionService,
@@ -38,14 +40,14 @@ export class MissionComponent implements OnInit {
   onResize(event) {
     this.width = window.innerWidth;
   }
-  getLeft() {
-    return '45.1%';
+  getLeft(left) {
+    return left + '%';
   }
-  getTop() {
-    return '41.225%';
+  getTop(top) {
+    return top + '%';
   }
-  getWidth() {
-    return (this.width / 6600) * 347 + 'px';
+  getWidth(width) {
+    return (this.width / 6600) * width + 'px';
   }
 
   ngOnInit() {
