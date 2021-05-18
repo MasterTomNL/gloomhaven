@@ -45,8 +45,7 @@ export class MissionComponent implements OnInit {
     return '41.225%';
   }
   getWidth() {
-    console.log(6600 / this.width);
-    return (6600 / this.width / 1000) * 347 + '%';
+    return (this.width / 6600) * 347 + 'px';
   }
 
   ngOnInit() {
