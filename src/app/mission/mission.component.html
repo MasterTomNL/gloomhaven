@@ -1,3 +1,6 @@
+<img src="https://mastertom.nl/img/gloomhaven/map/map.png" >
+<area />
+
 <section>
   <h1>Our story
     <button mat-icon-button class="add-button" (click)="addEvent()" *ngIf="isAdmin()">
@@ -12,7 +15,6 @@
       <mat-icon class="typeIcon" *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{
         typeIcon(event.type) }}
       </mat-icon>
-      <img [src]="'https://mastertom.nl/img/gloomhaven/map/'+event.eventId+'.png'" *ngIf="event.type == 'story'" />
       <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
       {{ event.title }}
       <span class="party">
