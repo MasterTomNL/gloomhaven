@@ -58,5 +58,13 @@
 }
 
 .worldmap {
+  position: relative;
   width: 100%;
+}
+.worldmap .map {
+  position: relative;
+  width: 100%;
+}
+.worldmap .location {
+  position: absolute;
 }

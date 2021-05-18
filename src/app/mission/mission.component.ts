@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import {
   MatDialog,
   MatDialogRef,
@@ -19,6 +19,8 @@ export class MissionComponent implements OnInit {
   events: Event[];
   user: User;
   eventsAreHidden: boolean = true;
+  width: number;
+
   constructor(
     private missionService: MissionService,
     public dialog: MatDialog,
@@ -30,6 +32,20 @@ export class MissionComponent implements OnInit {
     // get user
     let userId = userService.getCurrentUserId();
     if (userId) userService.getUser(userId).subscribe(u => (this.user = u));
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.width = window.innerWidth;
+  }
+  getLeft() {
+    return '45.1%';
+  }
+  getTop() {
+    return '41.225%';
+  }
+  getWidth() {
+    return (6600 / this.width) * 347 + '%';
   }
 
   ngOnInit() {}
