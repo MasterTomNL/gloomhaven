@@ -45,17 +45,17 @@
       <textarea name="text" matInput rows="10" [(ngModel)]="event.text" placeholder="What happened..."></textarea>
     </mat-form-field>
 
-    <mat-form-field *ngIf="event.type in ['city','road']">
+    <mat-form-field *ngIf="event.type == 'city' || event.type == 'road'">
       <mat-label>Choice</mat-label>
       <textarea name="choice" matInput rows="2" placeholder="choice" [(ngModel)]="event.choice"></textarea>
     </mat-form-field>
 
-    <mat-form-field *ngIf="event.type in ['city','road']">
+    <mat-form-field *ngIf="event.type == 'city' || event.type == 'road'">
       <mat-label>Outcome</mat-label>
       <textarea name="outcome" matInput rows="3" placeholder="Outcome" [(ngModel)]="event.outcome"></textarea>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field *ngIf="event.type == 'story'">
       <mat-label>Summary</mat-label>
       <textarea name="summary" matInput rows="3" placeholder="Summary" [(ngModel)]="event.summary"></textarea>
     </mat-form-field>
