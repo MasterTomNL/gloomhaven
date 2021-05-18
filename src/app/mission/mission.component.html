@@ -12,6 +12,7 @@
       <mat-icon class="typeIcon" *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{
         typeIcon(event.type) }}
       </mat-icon>
+      <img [src]="'https://mastertom.nl/img/gloomhaven/map/'+event.eventId+'.png'" *ngIf="event.type == 'story'" />
       <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
       {{ event.title }}
       <span class="party">
@@ -21,6 +22,9 @@
         <mat-icon>edit</mat-icon>
       </button>
     </h2>
+    <div class="summary">
+      {{ event.summary }}
+    </div>
     <div class="text" [hidden]="true" id="event-{{ $index }}">
       <div class="party">
         <span *ngFor="let name of event.party">{{ name }}</span>
