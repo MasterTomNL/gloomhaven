@@ -18,6 +18,7 @@ export interface Event {
   icon?: string;
   choice?: string;
   outcome?: string;
+  summary?: string;
 }
 
 export interface User {
