@@ -39,10 +39,10 @@ export class MissionComponent implements OnInit {
     this.width = window.innerWidth;
   }
   getLeft() {
-    return '45.1%';
+    return '49.568%';
   }
   getTop() {
-    return '41.225%';
+    return '41.923%';
   }
   getWidth() {
     return (this.width / 6600) * 347 + 'px';
