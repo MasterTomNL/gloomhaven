@@ -45,10 +45,13 @@ export class MissionComponent implements OnInit {
     return '41.225%';
   }
   getWidth() {
-    return (6600 / this.width) * 347 + '%';
+    console.log(6600 / this.width);
+    return (6600 / this.width / 1000) * 347 + '%';
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.width = window.innerWidth;
+  }
 
   addEvent() {
     const dialogRef = this.dialog.open(DialogEvent);
