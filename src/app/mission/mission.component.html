@@ -1,29 +1,56 @@
-<div class="worldmap">
+<!--<div class="worldmap">
   <img src="https://mastertom.nl/img/gloomhaven/map/map.png" class="map">
   <img class="location"
     *ngFor="let location of locations"
     [src]="'https://mastertom.nl/img/gloomhaven/map/'+location.number+'.png'"
     [style.left]="getLeft(location.mapPosition.left)" [style.top]="getTop(location.mapPosition.top)" [style.width]="getWidth(location.width)">
-</div>
+</div>-->
 
 <section>
-  <h1>Our story
-    <button mat-icon-button class="add-button" (click)="addEvent()" *ngIf="isAdmin()">
+  <h1>
+    Our story
+    <button
+      mat-icon-button
+      class="add-button"
+      (click)="addEvent()"
+      *ngIf="isAdmin()"
+    >
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </h1>
-  <mat-checkbox style="color:white;" [(ngModel)]="eventsAreHidden">Hide road/city events.</mat-checkbox>
-  <article *ngFor="let event of events; let $index = index;" class="event" [class]="event.type"
-    [hidden]="hidden(event)">
+  <mat-checkbox style="color:white;" [(ngModel)]="eventsAreHidden"
+    >Hide road/city events.</mat-checkbox
+  >
+  <article
+    *ngFor="let event of events; let $index = index"
+    class="event"
+    [class]="event.type"
+    [hidden]="hidden(event)"
+  >
     <h2>
-      <img class="eventIcon" [src]="'https://mastertom.nl/img/gloomhaven/icon-'+event.icon+'.png'" *ngIf="event.type == 'story'">
-      <mat-icon class="typeIcon" *ngIf="event.type != 'story'" title="{{ event.type + ': ' + event.eventId }}">{{
-        typeIcon(event.type) }}
+      <img
+        class="eventIcon"
+        [src]="
+          'https://mastertom.nl/img/gloomhaven/icon-' + event.icon + '.png'
+        "
+        *ngIf="event.type == 'story'"
+      />
+      <mat-icon
+        class="typeIcon"
+        *ngIf="event.type != 'story'"
+        title="{{ event.type + ': ' + event.eventId }}"
+        >{{ typeIcon(event.type) }}
       </mat-icon>
-      <span *ngIf="event.eventId && event.type=='story'"># {{ event.eventId }} - </span>
+      <span *ngIf="event.eventId && event.type == 'story'"
+        ># {{ event.eventId }} -
+      </span>
       {{ event.title }}
       <span class="party">
-        <img *ngFor="let char of event.party" [src]="getClassIcon(char)" [title]="char">
+        <img
+          *ngFor="let char of event.party"
+          [src]="getClassIcon(char)"
+          [title]="char"
+        />
       </span>
       <button mat-icon-button (click)="edit(event)" *ngIf="isAdmin()">
         <mat-icon>edit</mat-icon>
